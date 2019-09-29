@@ -3,49 +3,42 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    'jest/globals': true
+    'jest/globals': true,
   },
   extends: [
-    'airbnb',
+    'react-app',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:prettier/recommended',
     'prettier',
     'prettier/@typescript-eslint',
-    'prettier/react'
+    'prettier/react',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
-    '__DEV__': true
+    __DEV__: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     project: './tsconfig.json',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-    'jest',
-    'prettier',
-    'prefer-arrow',
-    'react',
-    'react-hooks'
-  ],
+  plugins: ['@typescript-eslint', 'jest', 'prettier', 'prefer-arrow', 'react', 'react-hooks'],
   root: true,
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', 'jsx', '.ts', '.tsx']
-      }
+        extensions: ['.js', 'jsx', '.ts', '.tsx'],
+      },
     },
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   rules: {
     // eslint official
@@ -66,16 +59,16 @@ module.exports = {
       {
         disallowPrototype: true,
         singleReturnOnly: true,
-        classPropertiesAllowed: false
-      }
+        classPropertiesAllowed: false,
+      },
     ],
 
     // react
     'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['jsx', 'tsx']
-      }
+        extensions: ['jsx', 'tsx'],
+      },
     ],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-uses-react': 'error',
@@ -94,21 +87,22 @@ module.exports = {
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never'
-      }
+        tsx: 'never',
+      },
     ],
     'import/prefer-default-export': 'off',
 
     // prettier
     'prettier/prettier': [
-      'error', {
+      'error',
+      {
         bracketSpacing: true,
         printWidth: 120,
         semi: true,
         singleQuote: true,
         trailingComma: 'all',
-        useTabs: false
-      }
-    ]
-  }
+        useTabs: false,
+      },
+    ],
+  },
 };
